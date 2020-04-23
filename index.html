@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+    <!--Test comment-->
+    <!--second test-->
+
+</head>
+<body id="body">
+
+    <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Welcome to my Weather App!</h1>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Search by city to get started</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <p>This is a simple website designed to track current weather and future forcasts in you area.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Get Forecast</a></p>
+        </div>
+      </div>
+
+    <div id="weatherBox" class="container">
+        <div class="app-title"><p>Current weather</p></div>
+        <div class="notification"></div>
+        <div class="weather-container">
+            <div class="weather-icon"><img src="data:image/png;base64,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"></div>
+            <div class="temperature-value"><p>-&#176;<span>F</span></p></div></div>
+            <div class="temperature-description"><p>-</p></div>
+            <div class="location"><p>-</p></div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

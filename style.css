@@ -1,0 +1,19 @@
+.jumbotron {
+
+}
+
+
+body {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRhd_pwLoiIGnA6BPRUhqUmGE2MeEEotN6kzlYWA5_LxhZ5jdp&usqp=CAU");
+}
+
+#weatherBox {
+   
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px 5px;
+    background-color: antiquewhite;
+}

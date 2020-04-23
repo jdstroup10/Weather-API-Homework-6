@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="weather.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+        <h2 id="city">Leeds</h2>
+        <div class="middle">
+            <img src="" alt="icon" id="icon">
+            <div class="degrees">
+                <h1 id="temp">19</h1>
+                <span>&#176;</span>
+            </div>
+            <h3 id="desc">Sunny</h3>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        
+        function weather(){     
+            var URL = "https://fcc-weather-api.glitch.me/api/current?lat=53.70&lon=-1.24";
+
+            $.getJSON(URL, function(data){
+                console.log(data);
+                updateDOM(data);
+            });
+        }
+        weather();
+        //Gets data from API
+        function updateDOM(data) {
+            var city = data.name;
+            var temp = Math.round(data.main.temp);
+            var desc = data.weather[0].description;
+            var icon = data.weather[0].icon;
+
+            $("#city").html(city);
+            $("#temp").html(temp);
+            $("#desc").html(desc);
+            $("#icon").attr("src", icon);
+
+        }
+
+    });
+
+    </script>
+
+    
+</body>
+</html>
